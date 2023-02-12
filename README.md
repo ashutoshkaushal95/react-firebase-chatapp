@@ -1,0 +1,1 @@
+Simple Chat Application Built with React, Sass and Firebase.
