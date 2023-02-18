@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage, ref } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDi9UsyPARFhfHgsYJjbw0n55ndopcDsiw",
+  apiKey: import.meta.env.VITE_FIREBASE_KEY,
   authDomain: "chaton-f10d3.firebaseapp.com",
   projectId: "chaton-f10d3",
   storageBucket: "chaton-f10d3.appspot.com",

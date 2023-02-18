@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [err, setErr] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -39,11 +40,13 @@ const Register = () => {
               photoURL: downloadURL,
             });
 
+            //create empty user chats on firestore
             await setDoc(doc(db, "userChats", res.user.uid), {});
             navigate("/");
           } catch (err) {
             console.log(err);
             setErr(true);
+            setLoading(false);
           }
         });
       });
@@ -66,7 +69,8 @@ const Register = () => {
             <img src={Add} alt="" />
             <span>Add an Avatar</span>
           </label>
-          <button>Sign Up</button>
+          <button disabled={loading}>Sign up</button>
+          {loading && "Uploading and compressing the image please wait..."}
           {err && <span>Something went wrong</span>}
         </form>
         <p>
