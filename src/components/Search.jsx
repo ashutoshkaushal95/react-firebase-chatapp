@@ -95,7 +95,7 @@ const Search = () => {
           <img src={user.photoURL} alt="" />
           <div className="userChatInfo">
             <span>{user.displayName}</span>
-            <p>Hello Ashutosh</p>
+            <p>Start Messaging...</p>
           </div>
         </div>
       )}
